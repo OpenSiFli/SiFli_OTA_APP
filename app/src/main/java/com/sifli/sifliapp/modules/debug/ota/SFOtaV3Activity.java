@@ -457,10 +457,17 @@ public class SFOtaV3Activity extends AppCompatActivity implements View.OnClickLi
         try{
             this.speedView.clear();
             this.addLog("启动ota onFirmwareStartBtnTouch...");
-            OtaV3ResourceFileInfo resourceFileInfo = new OtaV3ResourceFileInfo(OtaV3DfuFileType.ZIP_RESOURCE,this.resFilePath,true);
+            OtaV3ResourceFileInfo resourceFileInfo = null;
+            if(!StringUtil.isNullOrEmpty(this.resFilePath)){
+                resourceFileInfo = new OtaV3ResourceFileInfo(OtaV3DfuFileType.ZIP_RESOURCE,this.resFilePath,true);
+            }
+
             ArrayList<OtaV3BinFileInfo> binFileInfos = new ArrayList<>();
-            OtaV3BinFileInfo ctrlFile = new OtaV3BinFileInfo(OtaV3DfuFileType.OTA_CTRL_FILE,this.ctrlFilePath,-1);
-            binFileInfos.add(ctrlFile);
+            if(!StringUtil.isNullOrEmpty(this.ctrlFilePath)){
+                OtaV3BinFileInfo ctrlFile = new OtaV3BinFileInfo(OtaV3DfuFileType.OTA_CTRL_FILE,this.ctrlFilePath,-1);
+                binFileInfos.add(ctrlFile);
+            }
+
             for (SFOtaImageItem item:this.dataSource) {
                 if(item.getImageID() < 0){
                     toast("请选择Image File Type");
@@ -485,10 +492,15 @@ public class SFOtaV3Activity extends AppCompatActivity implements View.OnClickLi
         try{
             this.speedView.clear();
             this.addLog("启动ota onFirmwareResumeBtnTouch...");
-            OtaV3ResourceFileInfo resourceFileInfo = new OtaV3ResourceFileInfo(OtaV3DfuFileType.ZIP_RESOURCE,this.resFilePath,true);
+            OtaV3ResourceFileInfo resourceFileInfo = null;
+            if(!StringUtil.isNullOrEmpty(this.resFilePath)){
+                resourceFileInfo = new OtaV3ResourceFileInfo(OtaV3DfuFileType.ZIP_RESOURCE,this.resFilePath,true);
+            }
             ArrayList<OtaV3BinFileInfo> binFileInfos = new ArrayList<>();
-            OtaV3BinFileInfo ctrlFile = new OtaV3BinFileInfo(OtaV3DfuFileType.OTA_CTRL_FILE,this.ctrlFilePath,-1);
-            binFileInfos.add(ctrlFile);
+            if(!StringUtil.isNullOrEmpty(this.ctrlFilePath)){
+                OtaV3BinFileInfo ctrlFile = new OtaV3BinFileInfo(OtaV3DfuFileType.OTA_CTRL_FILE,this.ctrlFilePath,-1);
+                binFileInfos.add(ctrlFile);
+            }
             for (SFOtaImageItem item:this.dataSource) {
                 if(item.getImageID() < 0){
                     toast("请选择Image File Type");

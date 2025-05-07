@@ -38,8 +38,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
-    implementation 'com.sifli:siflicore:1.1.7'
-    implementation 'com.sifli:sifliotasdk:2.0.9'
+    implementation 'com.sifli:siflicore:1.1.9'
+    implementation 'com.sifli:sifliotasdk:2.0.10'
     implementation 'com.sifli:siflidfu:1.1.31'
 
     implementation 'com.github.jenly1314:arcseekbar:1.1.1'
