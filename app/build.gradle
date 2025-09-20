@@ -38,9 +38,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
-    implementation 'com.sifli:siflicore:1.1.9'
-    implementation 'com.sifli:sifliotasdk:2.0.10'
-    implementation 'com.sifli:siflidfu:1.1.31'
+    implementation 'com.sifli:siflicore:1.2.5'
+    implementation 'com.sifli:sifliotasdk:2.1.1'
+    implementation 'com.sifli:siflidfu:1.1.36'
 
     implementation 'com.github.jenly1314:arcseekbar:1.1.1'
     implementation 'com.mikepenz:iconics-core:5.3.4'
