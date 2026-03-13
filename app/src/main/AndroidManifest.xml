@@ -35,6 +35,9 @@
             android:name=".modules.debug.ota.SFOtaV3Activity"
             android:exported="false" />
         <activity
+            android:name="com.sifli.sifliapp.modules.debug.guibuilder.WatchfaceEditorActivity"
+            android:exported="false" />
+        <activity
             android:name=".modules.pushapp.AppResActivity"
             android:exported="false" />
         <activity
@@ -56,6 +59,7 @@
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
     </application>
 
 </manifest>

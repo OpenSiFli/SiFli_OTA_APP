@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.sifli.sifliapp.MainActivity;
 import com.sifli.sifliapp.R;
+import com.sifli.sifliapp.modules.debug.guibuilder.WatchfaceEditorActivity;
 import com.sifli.sifliapp.modules.debug.ota.SFOtaV3Activity;
 import com.sifli.sifliapp.modules.debug.pushsdkfile.PushSDKFileActivity;
 import com.sifli.sifliapp.modules.devicescan.DeviceScanActivity;
@@ -31,6 +32,7 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
     private RelativeLayout pushAppResRl;
     private RelativeLayout searchDeviceRl;
     private RelativeLayout sdkFilePushRl;
+    private RelativeLayout guibuilderSdkRl;
     private TextView macTv;
     private String targetMac;
     private ActivityResultLauncher<Intent> searchLauncher;
@@ -49,6 +51,7 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
         this.pushAppResRl = findViewById(R.id.sf_debug_home_push_app_res_rl);
         this.searchDeviceRl = findViewById(R.id.sf_debug_home_search_device_rl);
         this.sdkFilePushRl = findViewById(R.id.sf_debug_home_push_sdk_file_rl);
+        this.guibuilderSdkRl = findViewById(R.id.sf_debug_home_guibuilder_sdk_demo_rl);
         this.macTv = findViewById(R.id.sf_debug_home_mac_tv);
     }
 
@@ -58,6 +61,7 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
         this.pushAppResRl.setOnClickListener(this);
         this.searchDeviceRl.setOnClickListener(this);
         this.sdkFilePushRl.setOnClickListener(this);
+        this.guibuilderSdkRl.setOnClickListener(this);
     }
 
     private void init(){
@@ -83,6 +87,8 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
             onSearchDeviceRlTouch();
         }else if(viewId == R.id.sf_debug_home_push_sdk_file_rl){
             onPushSDKFileRlTouch();
+        }else if(viewId == R.id.sf_debug_home_guibuilder_sdk_demo_rl){
+            onGUIBuilderSdkDemoRlTouch();
         }
     }
 
@@ -113,6 +119,16 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
         }
         Intent intent = new Intent(DebugHomeActivity.this, PushSDKFileActivity.class);
         intent.putExtra(PushSDKFileActivity.EXTRA_BLE_DEVICE, this.targetMac);
+        startActivity(intent);
+    }
+
+    private void onGUIBuilderSdkDemoRlTouch(){
+        if(StringUtil.isNullOrEmpty(this.targetMac)){
+            this.toast("请先搜索设备");
+            return;
+        }
+        Intent intent = new Intent(DebugHomeActivity.this, WatchfaceEditorActivity.class);
+        intent.putExtra(WatchfaceEditorActivity.EXTRA_BLE_DEVICE, this.targetMac);
         startActivity(intent);
     }
 

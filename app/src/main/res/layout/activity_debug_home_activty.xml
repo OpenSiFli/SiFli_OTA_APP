@@ -149,6 +149,31 @@
                     app:iiv_color="@color/sf_999999"
                     app:iiv_icon="faw_chevron_right" />
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sf_debug_home_guibuilder_sdk_demo_rl"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/sf_333333"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5dp"
+                    android:text="GUIBuilder SDK Demo"/>
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_alignParentRight="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:iiv_size="16dp"
+                    app:iiv_color="@color/sf_999999"
+                    app:iiv_icon="faw_chevron_right" />
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 

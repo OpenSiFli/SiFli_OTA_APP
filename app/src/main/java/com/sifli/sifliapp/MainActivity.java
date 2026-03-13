@@ -42,6 +42,7 @@ import com.sifli.siflicore.log.SFLog;
 import com.sifli.sifliotasdk.manager.ISFOtaV3ManagerCallback;
 import com.sifli.sifliotasdk.manager.SFOtaV3Manager;
 import com.sifli.sifliapp.modules.pushapp.model.*;
+import com.sifli.sifliotasdk.manager.SFTransmissionMode;
 import com.sifli.sifliotasdk.modules.sol2.usermodel.OtaV3DfuFileType;
 import com.sifli.sifliotasdk.modules.sol2.usermodel.OtaV3ResourceFileInfo;
 import com.sifli.sifliotasdk.modules.sol2.usermodel.OtaV3Type;
@@ -169,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.speedView = new SpeedView();
         this.otaManager = SFOtaV3Manager.getInstance();
         this.otaManager.setCallback(this);
-        this.otaManager.init(this.getApplication());
+        this.otaManager.init(this.getApplication(), SFTransmissionMode.TRANSMISSION_MODE_BLE);
         this.ezipSetting = new EzipSetting();
 
         createSearchLauncher();

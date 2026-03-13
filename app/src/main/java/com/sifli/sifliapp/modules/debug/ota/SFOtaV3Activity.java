@@ -28,6 +28,7 @@ import com.sifli.siflicore.log.SFLog;
 import com.sifli.siflicore.shell.SFBleShellStatus;
 import com.sifli.sifliotasdk.manager.ISFOtaV3ManagerCallback;
 import com.sifli.sifliotasdk.manager.SFOtaV3Manager;
+import com.sifli.sifliotasdk.manager.SFTransmissionMode;
 import com.sifli.sifliotasdk.modules.sol2.usermodel.OtaV3BinFileInfo;
 import com.sifli.sifliotasdk.modules.sol2.usermodel.OtaV3DfuFileType;
 import com.sifli.sifliotasdk.modules.sol2.usermodel.OtaV3ImageID;
@@ -93,7 +94,7 @@ public class SFOtaV3Activity extends AppCompatActivity implements View.OnClickLi
 
         this.otaManager = SFOtaV3Manager.getInstance();
         this.otaManager.setCallback(this);
-        this.otaManager.init(this.getApplication());
+        this.otaManager.init(this.getApplication(), SFTransmissionMode.TRANSMISSION_MODE_BLE);
         this.macAddressTv.setText(targetMac);
         this.imageAdapter = new SFOtaImageAdapter(this,this.dataSource,this);
         this.imageListView.setAdapter(this.imageAdapter);

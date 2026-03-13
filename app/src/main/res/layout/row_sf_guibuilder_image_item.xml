@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="10dp"
+
+    android:layout_height="60dp">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp">
+        <TextView
+            android:id="@+id/sf_guibuilder_item_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="10sp"
+            android:text="文件名"/>
+        <ImageView
+            android:id="@+id/sf_guibuilder_item_origin_image_iv"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitCenter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:id="@+id/sf_guibuilder_item_patch_image_iv"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitCenter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <TextView
+            android:id="@+id/sf_guibuilder_item_status_tv"
+            android:layout_marginStart="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="10sp"
+            android:text=""/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_height="60dp">
+
+        <Button
+            android:id="@+id/sf_guibuilder_item_edit_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:textSize="9sp"
+            android:text="Edit"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="1dp" />
+        <Button
+            android:id="@+id/sf_guibuilder_item_send_btn"
+            android:layout_marginStart="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="1dp"
+            android:textSize="9sp"
+            android:text="Send"/>
+
+        <Button
+            android:id="@+id/sf_guibuilder_item_delete_btn"
+            android:layout_marginStart="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="1dp"
+            android:textSize="9sp"
+            android:text="Del"/>
+    </LinearLayout>
+
+</RelativeLayout>

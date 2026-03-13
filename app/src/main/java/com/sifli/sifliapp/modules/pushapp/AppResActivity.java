@@ -31,6 +31,7 @@ import com.sifli.siflicore.error.SFError;
 import com.sifli.siflicore.log.SFLog;
 import com.sifli.sifliotasdk.manager.ISFOtaV3ManagerCallback;
 import com.sifli.sifliotasdk.manager.SFOtaV3Manager;
+import com.sifli.sifliotasdk.manager.SFTransmissionMode;
 import com.sifli.sifliotasdk.modules.sol2.usermodel.OtaV3DfuFileType;
 import com.sifli.sifliotasdk.modules.sol2.usermodel.OtaV3ResourceFileInfo;
 import com.sifli.sifliapp.utils.StringUtil;
@@ -133,7 +134,7 @@ public class AppResActivity extends AppCompatActivity implements View.OnClickLis
 
         this.otaManager = SFOtaV3Manager.getInstance();
         this.otaManager.setCallback(this);
-        this.otaManager.init(this.getApplication());
+        this.otaManager.init(this.getApplication(), SFTransmissionMode.TRANSMISSION_MODE_BLE);
 
         SFLoginResult loginResult = SFUser.getInstance().getUserEntity();
         if (loginResult != null) {
