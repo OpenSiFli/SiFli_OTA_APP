@@ -250,8 +250,9 @@ public class PushSDKFileActivity extends AppCompatActivity implements View.OnCli
 
     private void onStopBtnTouch(){
         SFLog.i(TAG,"onStopBtnTouch");
-        Intent intent = new Intent(this, SifliDFUService.class);
-        this.stopService(intent);
+//        Intent intent = new Intent(this, SifliDFUService.class);
+//        this.stopService(intent);
+        this.finish();
     }
 
     private void toast(String msg){
