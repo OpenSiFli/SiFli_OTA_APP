@@ -29,6 +29,9 @@
             android:name=".modules.debug.pushsdkfile.PushSDKFileActivity"
             android:exported="false" />
         <activity
+            android:name=".modules.debug.otanand.SFNandActivity"
+            android:exported="false" />
+        <activity
             android:name=".modules.debug.DebugHomeActivity"
             android:exported="false" />
         <activity

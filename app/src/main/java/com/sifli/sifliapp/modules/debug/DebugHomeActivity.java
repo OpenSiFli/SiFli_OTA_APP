@@ -17,6 +17,7 @@ import com.sifli.sifliapp.MainActivity;
 import com.sifli.sifliapp.R;
 import com.sifli.sifliapp.modules.debug.guibuilder.WatchfaceEditorActivity;
 import com.sifli.sifliapp.modules.debug.ota.SFOtaV3Activity;
+import com.sifli.sifliapp.modules.debug.otanand.SFNandActivity;
 import com.sifli.sifliapp.modules.debug.pushsdkfile.PushSDKFileActivity;
 import com.sifli.sifliapp.modules.devicescan.DeviceScanActivity;
 import com.sifli.sifliapp.modules.pushapp.AppResActivity;
@@ -32,6 +33,7 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
     private RelativeLayout pushAppResRl;
     private RelativeLayout searchDeviceRl;
     private RelativeLayout sdkFilePushRl;
+    private RelativeLayout otav2NandRl;
     private RelativeLayout guibuilderSdkRl;
     private TextView macTv;
     private String targetMac;
@@ -52,6 +54,7 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
         this.searchDeviceRl = findViewById(R.id.sf_debug_home_search_device_rl);
         this.sdkFilePushRl = findViewById(R.id.sf_debug_home_push_sdk_file_rl);
         this.guibuilderSdkRl = findViewById(R.id.sf_debug_home_guibuilder_sdk_demo_rl);
+        this.otav2NandRl = findViewById(R.id.sf_debug_home_ota_v2_nand_rl);
         this.macTv = findViewById(R.id.sf_debug_home_mac_tv);
     }
 
@@ -61,6 +64,7 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
         this.pushAppResRl.setOnClickListener(this);
         this.searchDeviceRl.setOnClickListener(this);
         this.sdkFilePushRl.setOnClickListener(this);
+        this.otav2NandRl.setOnClickListener(this);
         this.guibuilderSdkRl.setOnClickListener(this);
     }
 
@@ -89,6 +93,8 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
             onPushSDKFileRlTouch();
         }else if(viewId == R.id.sf_debug_home_guibuilder_sdk_demo_rl){
             onGUIBuilderSdkDemoRlTouch();
+        }else if(viewId == R.id.sf_debug_home_ota_v2_nand_rl){
+            this.onOtaV2NandRlTouch();
         }
     }
 
@@ -118,6 +124,16 @@ public class DebugHomeActivity extends AppCompatActivity implements View.OnClick
             return;
         }
         Intent intent = new Intent(DebugHomeActivity.this, PushSDKFileActivity.class);
+        intent.putExtra(PushSDKFileActivity.EXTRA_BLE_DEVICE, this.targetMac);
+        startActivity(intent);
+    }
+
+    private void onOtaV2NandRlTouch(){
+        if(StringUtil.isNullOrEmpty(this.targetMac)){
+            this.toast("请先搜索设备");
+            return;
+        }
+        Intent intent = new Intent(DebugHomeActivity.this, SFNandActivity.class);
         intent.putExtra(PushSDKFileActivity.EXTRA_BLE_DEVICE, this.targetMac);
         startActivity(intent);
     }

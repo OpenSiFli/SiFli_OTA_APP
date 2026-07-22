@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".modules.ota.SFNandActivity">
+    <com.sifli.sifliapp.utils.SFScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[ota nand]Mac"/>
+            <TextView
+                android:id="@+id/sf_ota_nand_mac_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="---"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_margin="0dp"
+                android:id="@+id/sf_ota_nand_select_res_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:textSize="12sp"
+                android:text="SELECT RES FILE" />
+            <TextView
+                android:id="@+id/sf_ota_nand_res_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="---"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_margin="0dp"
+                android:id="@+id/sf_ota_nand_select_ctrl_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:textSize="12sp"
+                android:text="SELECT CTRL FILE" />
+            <TextView
+                android:id="@+id/sf_ota_nand_ctrl_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="---"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_margin="0dp"
+                android:id="@+id/sf_ota_nand_select_image_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:textSize="12sp"
+                android:text="SELECT IMAGE FILE" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="回复频率"/>
+            <EditText
+                android:id="@+id/sf_ota_nand_frequency_tv"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="5dp"
+                android:text="4"/>
+
+        </LinearLayout>
+
+        <com.sifli.sifliapp.utils.WrapContentListView
+            android:id="@+id/sf_ota_nand_image_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5">
+
+        </com.sifli.sifliapp.utils.WrapContentListView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+            <com.sifli.sifliapp.utils.SFScrollView
+                android:id="@+id/sf_ota_nand_log_sv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:background="@color/black">
+                <TextView
+                    android:id="@+id/sf_ota_nand_log_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/black"
+                    android:textColor="@color/white"
+                    android:gravity="start|bottom"
+                    android:lineSpacingExtra="5dp"
+                    android:scrollbars="none"
+                    android:text="--log--"
+                    android:textIsSelectable="true"
+                    android:textSize="10sp" />
+            </com.sifli.sifliapp.utils.SFScrollView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="05dp">
+            <TextView
+                android:id="@+id/sf_ota_nand_progress_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="进度"/>
+
+            <ProgressBar
+                android:id="@+id/sf_ota_nand_progress_pb"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:min="0"
+                android:max="100"
+                android:progress="00"
+                android:layout_marginHorizontal="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="05dp">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="速度"/>
+            <TextView
+                android:id="@+id/sf_ota_nand_speed_tv"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="瞬时 0 kb/s 平均 0 kb/s"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="操作" />
+
+            <Button
+                android:layout_margin="5dp"
+                android:id="@+id/sf_ota_nand_start_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:textSize="13sp"
+                android:text="START" />
+            <Button
+                android:layout_margin="10dp"
+                android:id="@+id/sf_ota_nand_resume_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+
+                android:textSize="13sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="Resume" />
+
+            <Button
+                android:layout_margin="10dp"
+                android:id="@+id/sf_ota_nand_stop_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+
+                android:textSize="13sp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="STOP" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </com.sifli.sifliapp.utils.SFScrollView>
+</LinearLayout>
